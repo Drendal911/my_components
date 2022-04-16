@@ -5,16 +5,17 @@ import { css } from '@emotion/react';
 
 interface ButtonProps {
     title?: string;
-    display?: string;
+    display?: 'none'|'inline'|'block'|'inline-block'|'flex'|'grid'|'inline_flex'|'inline-grid'|'initial'|'inherit';
     margin?: string;
-    textAlign?: string;
+    textAlign?: 'center' | 'left' | 'right' | 'justify' | 'initial' | 'inherit';
     padding?: string;
-    fontWeight?: string;
+    fontWeight?: 'normal'|'bold'|'lighter'|'bolder'|number;
     backgroundColor?: string;
     color?: string;
     border?: string;
     borderRadius?: string;
     width?: string;
+    height?: string;
     hover?: {
         backgroundColor?: string;
         color?: string;
@@ -22,7 +23,7 @@ interface ButtonProps {
     onClick?: () => void;
 }
 
-export function Button({ title, display, margin, textAlign, padding, fontWeight, backgroundColor, color, border, borderRadius, width, hover, onClick }: ButtonProps) {
+export function Button({ title, display, margin, textAlign, padding, fontWeight, backgroundColor, color, border, borderRadius, width, height, hover, onClick }: ButtonProps) {
 
     return(
         <button onClick={onClick} css={css`
@@ -36,6 +37,7 @@ export function Button({ title, display, margin, textAlign, padding, fontWeight,
               border-radius: ${borderRadius ? borderRadius : '.65rem'};
               border: ${border ? border : 'solid #79589F'};
               width: ${width ? width : '6rem'};
+              height: ${height ? height : '2.5rem'};
               :hover {
                 background-color: ${hover?.backgroundColor};
                 color: ${hover?.color}
