@@ -6,7 +6,7 @@ import { Button } from "../src/components/Button";
 
 
 const meta: Meta = {
-    title: 'Button',
+    title: 'Components/Button',
     component: Button
 }
 
@@ -15,11 +15,14 @@ export default meta;
 export function Primary() {
     return (
         <Button
-            title={'My Button'}
-            hover={{
-                backgroundColor: '#79589F',
-                color: 'white',
+            btn={{
+                title: 'Primary Button',
+                hover: {
+                    backgroundColor: '#79589F',
+                    color: 'white',
+                }
             }}
+
         />
     )
 }
@@ -27,14 +30,17 @@ export function Primary() {
 export function Secondary() {
     return (
         <Button
-            title={'My Button'}
-            color={'white'}
-            backgroundColor={'#79589F'}
-            display={'flex'}
-            hover={{
-                color: '#79589F',
-                backgroundColor: 'white',
+            btn={{
+                title: 'Secondary Button',
+                color: 'white',
+                backgroundColor: '#79589F',
+                display: 'flex',
+                hover: {
+                    color: '#79589F',
+                    backgroundColor: 'white',
+                }
             }}
         />
     )
 }
+
