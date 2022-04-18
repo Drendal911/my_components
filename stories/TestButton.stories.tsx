@@ -1,6 +1,4 @@
 import React from 'react';
-// import { Meta } from '@storybook/react';
-// import { Button } from "../src/components/TestButton";
 import { Meta, Story } from '@storybook/react';
 import { Button, Props } from "../src/components/TestButton";
 import { action } from '@storybook/addon-actions';
@@ -24,9 +22,6 @@ export const Secondary = Template.bind({});
 
 Secondary.args = {
     onClick: action('secondary clicked'),
-    hoverStatus: true,
-    hover: {
-        backgroundColor: '#79589F',
-        color: 'white',
-    }
+    color: 'green',
+    width: 10,
 }
