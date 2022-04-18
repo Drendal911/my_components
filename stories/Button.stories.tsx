@@ -27,20 +27,3 @@ export function Primary() {
     )
 }
 
-export function Secondary() {
-    return (
-        <Button
-            btn={{
-                title: 'Secondary Button',
-                color: 'white',
-                backgroundColor: '#79589F',
-                display: 'flex',
-                hover: {
-                    color: '#79589F',
-                    backgroundColor: 'white',
-                }
-            }}
-        />
-    )
-}
-

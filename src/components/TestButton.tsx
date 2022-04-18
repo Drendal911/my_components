@@ -1,11 +1,10 @@
-import React, {HTMLAttributes, ReactNode} from "react";
+import React, { HTMLAttributes } from "react";
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 
 export interface Props extends HTMLAttributes<HTMLButtonElement> {
-    children: ReactNode;
-    variant: 'primary' | 'secondary';
     title?: string;
+    variant?: 'solid'|'bordered';
     display?: 'none'|'inline'|'block'|'inline-block'|'flex'|'grid'|'inline_flex'|'inline-grid'|'initial'|'inherit';
     margin?: number;
     padding?: number;
@@ -16,13 +15,15 @@ export interface Props extends HTMLAttributes<HTMLButtonElement> {
     borderRadius?: 'square'|'semi-rounded'|'rounded';
     width?: string;
     height?: string;
-    hover?: {
-        backgroundColor?: string;
-        color?: string;
-    }
+    hover?: boolean;
+
 }
 
-export function Button({ children, variant = 'primary', ...props }: Props) {
+export function Button({ ...props }: Props) {
+    const color = props.color ? props.color : '#79589F';
+    const hovers = props.hover ? `:hover {background-color: ${backgroundColor}; color: ${color}} : 'none'};` : null;
+}
+    const backgroundColor = props.backgroundColor ? props.backgroundColor : 'white';
     let radius;
     if (props.borderRadius === 'square') { radius = 0 }
     else if (props.borderRadius === 'semi-rounded') { radius = .6}
@@ -40,10 +41,7 @@ export function Button({ children, variant = 'primary', ...props }: Props) {
               border: ${props.borderStyle ? props.borderStyle : 'solid #79589F'};
               width: ${props.width ? props.width : 'auto'};
               height: ${props.height ? props.height : 'auto'};
-              :hover {
-                background-color: ${props.hover?.backgroundColor};
-                color: ${props.hover?.color}
-              }
+              {hovers}              
             `
         }>
             {props.title ? props.title : 'Button'}

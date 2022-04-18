@@ -23,9 +23,8 @@ export const Default = Template.bind({});
 export const Secondary = Template.bind({});
 
 Secondary.args = {
-    variant: 'secondary',
-    children: 'I am secondary',
     onClick: action('secondary clicked'),
+    hoverStatus: true,
     hover: {
         backgroundColor: '#79589F',
         color: 'white',
