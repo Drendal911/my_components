@@ -7,10 +7,9 @@ const meta: Meta = {
     title: 'Components/Button',
     component: Button,
     argTypes: {
-        onClick: { action: 'clicked' },
+        onClick: { action: 'Default button clicked' },
     },
 }
-
 
 export default meta;
 
@@ -18,10 +17,10 @@ const Template: Story<Props> = (args) => <Button {...args}/>
 
 export const Default = Template.bind({});
 
-export const Secondary = Template.bind({});
+export const Green = Template.bind({});
 
-Secondary.args = {
-    onClick: action('secondary clicked'),
+Green.args = {
+    onClick: action('Green button clicked'),
     color: 'green',
     width: 10,
 }
