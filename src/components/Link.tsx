@@ -10,6 +10,6 @@ export interface Props {
 export function Link({ href, name }: Props) {
 
     return (
-        <a href={href} css={css``}>{name}</a>
+        <a href={href} css={css``} target={"_blank"} rel={'noreferrer noopener'}>{name}</a>
     )
 }
