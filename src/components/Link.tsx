@@ -2,7 +2,7 @@ import React from "react";
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 
-export interface Props {
+export interface Props extends HTMLLinkElement {
     name: string;
     href: string;
 }
